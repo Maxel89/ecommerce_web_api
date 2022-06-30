@@ -1,8 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import playerRouter from "./routes/playerRoutes.js";
-import universityRouter from "./routes/universityRoutes.js";
-import emailRouter from "./routes/emailRouter.js"
+import productsRouter from "./routes/productsRoutes.js";
 import dotenv from "dotenv";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import cors from "cors";
@@ -17,9 +15,7 @@ app.use(bodyParser.json());
 
 
 
-app.use("/api/player/", playerRouter);
-app.use("/api/university/", universityRouter);
-app.use("/api/email/", emailRouter);
+app.use("/products/", productsRouter);
 
 app.use(notFound);
 app.use(errorHandler);
